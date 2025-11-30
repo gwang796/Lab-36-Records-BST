@@ -21,11 +21,11 @@ void IntBinaryTree::insert(TreeNode *&nodePtr, TreeNode *&newNode) {
 }
 // insertNode creates a new node to hold num as its value,
 // and passes it to the insert function.
-void IntBinaryTree::insertNode(int num) {
+void IntBinaryTree::insertNode(string value) {
     TreeNode *newNode; // Pointer to a new node.
     // Create a new node and store num in it.
     newNode = new TreeNode;
-    newNode->value = num;
+    newNode->value = value;
     newNode->left = newNode->right = nullptr;
     // Insert the node.
     insert(root, newNode);
