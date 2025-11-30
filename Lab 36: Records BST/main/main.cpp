@@ -21,6 +21,32 @@ int main() {
         tree.insertNode(code);
     }
     inputfile.close();
-    tree.displayInOrder();
+    int choice;
+    while (true) {
+        cout << "BST options: " << endl;
+        cout << "1) Add record" << endl;
+        cout << "2) Search record" << endl;
+        cout << "3) Delete record" << endl;
+        cout << "4) Modify record" << endl;
+        cout << "5) Display records" << endl;
+        cout << "6) Exit" << endl;
+        cin >> choice;
+        switch (choice ) {
+            case 1:
+                <#statements#>
+                break;
+            case 1:
+                <#statements#>
+                break;
+            case 1:
+                statements
+                break;
+            case 1:
+                <#statements#>
+                break;
+            default:
+                break;
+        }
+    }
     return 0;
 }
