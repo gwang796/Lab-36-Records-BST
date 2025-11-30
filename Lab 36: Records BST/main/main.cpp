@@ -11,6 +11,16 @@
 using namespace std;
 int main() {
     IntBinaryTree tree;
-    
+    ifstream inputfile("codes.txt");
+    if (!inputfile) {
+        cout << "data.txt was unable to be opened" << endl;
+        return 1;
+    }
+    string code;
+    while (inputfile >> code) {
+        tree.insertNode(code);
+    }
+    inputfile.close();
+    tree.displayInOrder();
     return 0;
 }
