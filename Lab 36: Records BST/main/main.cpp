@@ -13,7 +13,7 @@ int main() {
     IntBinaryTree tree;
     ifstream inputfile("codes.txt");
     if (!inputfile) {
-        cout << "data.txt was unable to be opened" << endl;
+        cout << "codes.txt was unable to be opened" << endl;
         return 1;
     }
     string code;
@@ -25,7 +25,7 @@ int main() {
     int choice2;
     string value,newValue;
     while (true) {
-        cout << "BST options: " << endl;
+        cout << "\nBST options: " << endl;
         cout << "1) Add record" << endl;
         cout << "2) Search record" << endl;
         cout << "3) Delete record" << endl;
@@ -36,14 +36,18 @@ int main() {
         cin >> choice;
         switch (choice ) {
             case 1:
-                cout << "Enter record to be insert: ";
+                cout << "Enter record to be inserted: ";
                 cin >> value;
                 tree.insertNode(value);
                 break;
             case 2:
                 cout << "Enter record to search: ";
                 cin >> value;
-                tree.searchNode(value);
+                if (tree.searchNode(value)){
+                    cout << "\nRecord found" << endl;
+                } else {
+                    cout << "\nRecord not found" << endl;
+                }
                 break;
             case 3:
                 cout << "Enter record to be deleted: ";
@@ -53,10 +57,14 @@ int main() {
             case 4:
                 cout << "Enter record to be modified: ";
                 cin >> value;
-                cout << "Enter new record: ";
-                cin >> newValue;
-                tree.remove(value);
-                tree.insertNode(newValue);
+                if (tree.searchNode(value)){
+                    cout << "Enter new record: ";
+                    cin >> newValue;
+                    tree.remove(value);
+                    tree.insertNode(newValue);
+                } else {
+                    cout << "\nRecord not found" << endl;
+                }
                 break;
             case 5:
                 cout << "1) Display in order" << endl;
